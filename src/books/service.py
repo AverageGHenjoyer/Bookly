@@ -28,8 +28,9 @@ class BookService:
             **book_data_dict
         )
 
-        new_book.published_date = datetime.strptime(book_data_dict['published_date'],"%Y-%m-%d")
+        # new_book.created_at = datetime.utcnow()
 
+        # print(f"New book.published date: {type(new_book.published_date)}")
         session.add(new_book)
 
         await session.commit()
